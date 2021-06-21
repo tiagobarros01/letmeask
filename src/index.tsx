@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Homepage from './pages/Homepage';
+
+import Home from './pages/SignIn/Index';
 
 import './services/firebase';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Homepage />
+    <Home />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );

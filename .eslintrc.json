@@ -24,7 +24,7 @@
     "no-use-before-define": "off",
     "no-console": "off",
     "import/extensions": [
-      "error",
+      "off",
       "ignorePackages",
       {
         "ts": "never",
