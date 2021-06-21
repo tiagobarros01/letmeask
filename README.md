@@ -7,7 +7,7 @@
 <h4 align="center">An App to answer your questions in live</h4>
  
 <p align="center">
-  <img src="public/img/questions.svg"/>
+  <img src="public/assets/signInPage.svg"/>
 </p>
 
 ## Features
