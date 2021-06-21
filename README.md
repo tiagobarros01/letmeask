@@ -4,7 +4,7 @@
   <br>
  </h1>
  
-<h4 align="center">An app for listen technology podcasts</h4>
+<h4 align="center">An App to answer your questions in live</h4>
  
 <p align="center">
   <img src="public/img/questions.svg"/>
