@@ -16,7 +16,7 @@ function AuthContextProvider({ children }: Props): JSX.Element {
   const [user, setUser] = useState<User>();
 
   useEffect(() => {
-    auth.onAuthStateChanged((oldUser) => {
+    const unsubscribe = auth.onAuthStateChanged((oldUser) => {
       if (oldUser) {
         const { displayName, photoURL, uid } = oldUser;
 
@@ -31,6 +31,8 @@ function AuthContextProvider({ children }: Props): JSX.Element {
         });
       }
     });
+
+    return () => unsubscribe();
   }, []);
 
   async function signInWithGoogle() {
@@ -53,13 +55,8 @@ function AuthContextProvider({ children }: Props): JSX.Element {
     }
   }
 
-  const memoizedValue = useMemo(() => {
-    const values: AuthContextData = {
-      user,
-      signInWithGoogle,
-    };
-    return values;
-  }, [user]);
+  const memoizedValue = useMemo(() => ({ user, signInWithGoogle }
+  ), [user]);
 
   return (
     <AuthContext.Provider value={memoizedValue}>

@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 import illustrationImg from '../../assets/images/illustration.svg';
 import logoImg from '../../assets/images/logo.svg';
 import { Button } from '../../components/Button/index';
-import { useAuth } from '../../hooks/useAuth';
+// import { useAuth } from '../../hooks/useAuth';
 import {
   Wrapper, Container, Main, MainContent, CreateRoomForm,
 } from './style';
 
 function NewRoom(): JSX.Element {
-  const { user } = useAuth();
+  // const { user } = useAuth();
 
   return (
     <Wrapper>
@@ -25,7 +25,6 @@ function NewRoom(): JSX.Element {
       <Main>
         <MainContent>
           <img src={logoImg} alt="Letmeask" />
-          <h1>{user?.name}</h1>
           <h2>Create a new room</h2>
           <CreateRoomForm action="">
             <input type="text" placeholder="Room name" />
