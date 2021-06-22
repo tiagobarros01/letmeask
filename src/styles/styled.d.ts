@@ -5,8 +5,14 @@ declare module 'styled-components' {
     title: string;
     colors: {
       background: string;
+      scndBackground: string;
 
+      title: string;
       text: string;
+
+      border: string;
+
+      redGoogle: string,
     };
   }
 }

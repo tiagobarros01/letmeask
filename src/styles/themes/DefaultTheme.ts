@@ -2,8 +2,14 @@ export default {
   title: 'defaultTheme',
 
   colors: {
-    background: '#191716',
+    background: '#f8f8f8',
+    scndBackground: '#835afd',
 
-    text: '#ddd',
+    title: '#fff',
+    text: '#29292e',
+
+    border: '#a8a8b3',
+
+    redGoogle: '#ea4335',
   },
 };
