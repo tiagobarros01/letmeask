@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 import GoogleIconImage from '../../assets/images/google-icon.svg';
 import illustrationImg from '../../assets/images/illustration.svg';
@@ -15,6 +16,12 @@ import {
 } from './style';
 
 function Home(): JSX.Element {
+  const history = useHistory();
+
+  function navigateToNewRoom() {
+    history.push('/rooms/new');
+  }
+
   return (
     <Wrapper>
       <Container>
@@ -28,7 +35,7 @@ function Home(): JSX.Element {
       <Main>
         <MainContent>
           <img src={logoImg} alt="Letmeask" />
-          <GoggleBtn type="button">
+          <GoggleBtn onClick={navigateToNewRoom} type="button">
             <img src={GoogleIconImage} alt="Google logo" />
             Create your room with Google
           </GoggleBtn>

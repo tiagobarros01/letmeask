@@ -1,5 +1,5 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import illustrationImg from '../../assets/images/illustration.svg';
 import logoImg from '../../assets/images/logo.svg';
@@ -34,7 +34,7 @@ function NewRoom(): JSX.Element {
           <p>
             Want to enter an existing room?
             {' '}
-            <a href="#">Click here</a>
+            <Link to="/">Click here</Link>
           </p>
         </MainContent>
       </Main>
