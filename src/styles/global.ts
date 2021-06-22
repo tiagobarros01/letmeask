@@ -11,7 +11,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    overflow: hidden;
+    background: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.text};
   }
 
   h1, h2, h3, p {
@@ -21,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body, input, textarea, button {
+    font: 400 16px 'Roboto', sans-serif;
   }
 
   input {
