@@ -3,6 +3,7 @@ import React from 'react';
 import GoogleIconImage from '../../assets/images/google-icon.svg';
 import illustrationImg from '../../assets/images/illustration.svg';
 import logoImg from '../../assets/images/logo.svg';
+import { Button } from '../../components/Button/index';
 import {
   Wrapper,
   Container,
@@ -34,7 +35,7 @@ function Homepage(): JSX.Element {
           <Divider>Or enter a room</Divider>
           <RoomForm action="">
             <input type="text" placeholder="Write the room code" />
-            <button type="submit">Enter at room</button>
+            <Button type="submit">Enter at room </Button>
           </RoomForm>
         </MainContent>
       </Main>
