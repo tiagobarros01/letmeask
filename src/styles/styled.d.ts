@@ -9,7 +9,9 @@ declare module 'styled-components' {
 
       title: string;
       text: string;
+      details: string;
 
+      link: string;
       border: string;
 
       redGoogle: string,
