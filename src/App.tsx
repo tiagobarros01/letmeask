@@ -1,10 +1,9 @@
 import React from 'react';
 
-// import Home from './pages/Home/Index';
-import NewRoom from './pages/NewRoom/index';
+import Routes from './routes/index.routes';
 
 const App = (): JSX.Element => (
-  <NewRoom />
+  <Routes />
 );
 
 export default App;

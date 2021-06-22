@@ -14,7 +14,7 @@ import {
   Divider,
 } from './style';
 
-function Homepage(): JSX.Element {
+function Home(): JSX.Element {
   return (
     <Wrapper>
       <Container>
@@ -43,4 +43,4 @@ function Homepage(): JSX.Element {
   );
 }
 
-export default Homepage;
+export default Home;
