@@ -1,8 +1,8 @@
 import React from 'react';
 
-import GoogleIconImage from '../../../public/assets/images/google-icon.svg';
-import illustrationImg from '../../../public/assets/images/illustration.svg';
-import logoImg from '../../../public/assets/images/logo.svg';
+import GoogleIconImage from '../../assets/images/google-icon.svg';
+import illustrationImg from '../../assets/images/illustration.svg';
+import logoImg from '../../assets/images/logo.svg';
 import {
   Wrapper,
   Container,
