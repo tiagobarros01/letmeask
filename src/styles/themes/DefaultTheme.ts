@@ -2,9 +2,8 @@ export default {
   title: 'defaultTheme',
 
   colors: {
-    background: '#f8f8f8',
+    background: '#191716',
 
-    text: '#29292e',
+    text: '#ddd',
   },
-
 };
