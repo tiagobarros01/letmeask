@@ -1,14 +1,10 @@
 <h1 align="center">
   <br>
-  <img src="./public/img/logo.svg"/>
+  <img src="./src/assets/images/logo.svg"/>
   <br>
  </h1>
  
 <h4 align="center">An App to answer your questions in live</h4>
- 
-<p align="center">
-  <img src="public/assets/signInPage.svg"/>
-</p>
 
 ## Features
 This app features all the latest tools and practices in web development!
