@@ -5,6 +5,7 @@ import GoogleIconImage from '../../assets/images/google-icon.svg';
 import illustrationImg from '../../assets/images/illustration.svg';
 import logoImg from '../../assets/images/logo.svg';
 import { Button } from '../../components/Button/index';
+import { useAuth } from '../../hooks/useAuth';
 import {
   Wrapper,
   Container,
@@ -17,8 +18,12 @@ import {
 
 function Home(): JSX.Element {
   const history = useHistory();
+  const { signInWithGoogle, user } = useAuth();
 
-  function handleCreateRoom() {
+  async function handleCreateRoom() {
+    if (!user) {
+      await signInWithGoogle();
+    }
     history.push('/rooms/new');
   }
 

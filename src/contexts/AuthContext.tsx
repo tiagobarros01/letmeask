@@ -1,4 +1,6 @@
-import React, { createContext, useMemo, useState } from 'react';
+import React, {
+  createContext, useMemo, useState, useEffect,
+} from 'react';
 
 import { AuthContextData } from '../@types/AuthContextData';
 import { User } from '../@types/User';
@@ -13,12 +15,10 @@ const AuthContext = createContext({} as AuthContextData);
 function AuthContextProvider({ children }: Props): JSX.Element {
   const [user, setUser] = useState<User>();
 
-  function signInWithGoogle() {
-    const AuthProvider = new firebase.auth.GoogleAuthProvider();
-
-    auth.signInWithPopup(AuthProvider).then((result) => {
-      if (result.user) {
-        const { displayName, photoURL, uid } = result.user;
+  useEffect(() => {
+    auth.onAuthStateChanged((oldUser) => {
+      if (oldUser) {
+        const { displayName, photoURL, uid } = oldUser;
 
         if (!displayName || !photoURL) {
           throw new Error('Missing information from Google Account');
@@ -31,6 +31,26 @@ function AuthContextProvider({ children }: Props): JSX.Element {
         });
       }
     });
+  }, []);
+
+  async function signInWithGoogle() {
+    const AuthProvider = new firebase.auth.GoogleAuthProvider();
+
+    const result = await auth.signInWithPopup(AuthProvider);
+
+    if (result.user) {
+      const { displayName, photoURL, uid } = result.user;
+
+      if (!displayName || !photoURL) {
+        throw new Error('Missing information from Google Account');
+      }
+
+      setUser({
+        id: uid,
+        name: displayName,
+        avatar: photoURL,
+      });
+    }
   }
 
   const memoizedValue = useMemo(() => {
