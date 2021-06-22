@@ -1,17 +1,8 @@
 import React, { createContext, useMemo, useState } from 'react';
 
+import { AuthContextData } from '../@types/AuthContextData';
+import { User } from '../@types/User';
 import { firebase, auth } from '../services/firebase';
-
-interface User {
-  id: string;
-  name: string;
-  avatar: string;
-}
-
-interface AuthContextData {
-  user: User;
-  signInWithGoogle: () => void;
-}
 
 interface Props {
   children: React.ReactNode;
@@ -20,7 +11,7 @@ interface Props {
 const AuthContext = createContext({} as AuthContextData);
 
 function AuthContextProvider({ children }: Props): JSX.Element {
-  const [user, setUser] = useState<User>({} as User);
+  const [user, setUser] = useState<User>();
 
   function signInWithGoogle() {
     const AuthProvider = new firebase.auth.GoogleAuthProvider();
