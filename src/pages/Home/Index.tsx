@@ -18,7 +18,7 @@ import {
 function Home(): JSX.Element {
   const history = useHistory();
 
-  function navigateToNewRoom() {
+  function handleCreateRoom() {
     history.push('/rooms/new');
   }
 
@@ -35,7 +35,7 @@ function Home(): JSX.Element {
       <Main>
         <MainContent>
           <img src={logoImg} alt="Letmeask" />
-          <GoggleBtn onClick={navigateToNewRoom} type="button">
+          <GoggleBtn onClick={handleCreateRoom} type="button">
             <img src={GoogleIconImage} alt="Google logo" />
             Create your room with Google
           </GoggleBtn>
