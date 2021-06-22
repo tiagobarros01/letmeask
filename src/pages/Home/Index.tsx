@@ -17,7 +17,10 @@ function Homepage(): JSX.Element {
   return (
     <Wrapper>
       <Container>
-        <img src={illustrationImg} alt="Illustration symbolizing questions and answers" />
+        <img
+          src={illustrationImg}
+          alt="Illustration symbolizing questions and answers"
+        />
         <strong>Create live Q&amp;A rooms</strong>
         <p>Remove your audience&apos;s doubts in real time</p>
       </Container>
@@ -26,17 +29,12 @@ function Homepage(): JSX.Element {
           <img src={logoImg} alt="Letmeask" />
           <GoggleBtn type="button">
             <img src={GoogleIconImage} alt="Google logo" />
-            Create your room with Goggle
+            Create your room with Google
           </GoggleBtn>
           <Divider>Or enter a room</Divider>
           <RoomForm action="">
-            <input
-              type="text"
-              placeholder="Write the room code"
-            />
-            <button type="submit">
-              Enter at room
-            </button>
+            <input type="text" placeholder="Write the room code" />
+            <button type="submit">Enter at room</button>
           </RoomForm>
         </MainContent>
       </Main>
