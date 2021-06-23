@@ -35,7 +35,7 @@ export const ButtonComponent = styled.button`
 
     padding: 0 16px 0 12px;
     
-    width: 230px;
+    width: 250px;
 
     font-size: 14px;
     font-weight: 500;
