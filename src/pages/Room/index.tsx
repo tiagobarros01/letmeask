@@ -1,7 +1,9 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
 import LogoImg from '../../assets/images/logo.svg';
 import { Button } from '../../components/Button';
+import { RoomCode } from '../../components/RoomCode';
 import {
   Wrapper,
   Content,
@@ -11,13 +13,19 @@ import {
   FormFooter,
 } from './style';
 
+interface RoomParams {
+  id: string;
+}
+
 export default function Room(): JSX.Element {
+  const params = useParams<RoomParams>();
+
   return (
     <Wrapper>
       <header>
         <Content>
           <img src={LogoImg} alt="Letmeask" />
-          <div>Código</div>
+          <RoomCode code={params.id} />
         </Content>
       </header>
       <Main>
