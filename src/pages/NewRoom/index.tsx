@@ -1,16 +1,35 @@
-import React from 'react';
+/* eslint-disable no-useless-return */
+import React, { FormEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import illustrationImg from '../../assets/images/illustration.svg';
 import logoImg from '../../assets/images/logo.svg';
 import { Button } from '../../components/Button/index';
-// import { useAuth } from '../../hooks/useAuth';
+import { useAuth } from '../../hooks/useAuth';
+import { database } from '../../services/firebase';
 import {
   Wrapper, Container, Main, MainContent, CreateRoomForm,
 } from './style';
 
 function NewRoom(): JSX.Element {
-  // const { user } = useAuth();
+  const { user } = useAuth();
+
+  const [newRoom, setNewRoom] = useState('');
+
+  async function handleCreateRoom(event: FormEvent) {
+    event.preventDefault();
+
+    if (newRoom.trim() === '') {
+      return;
+    }
+
+    const roomRef = database.ref('rooms');
+
+    const firebaseRoom = await roomRef.push({
+      title: newRoom,
+      authorId: user?.id,
+    });
+  }
 
   return (
     <Wrapper>
@@ -26,8 +45,13 @@ function NewRoom(): JSX.Element {
         <MainContent>
           <img src={logoImg} alt="Letmeask" />
           <h2>Create a new room</h2>
-          <CreateRoomForm action="">
-            <input type="text" placeholder="Room name" />
+          <CreateRoomForm onSubmit={handleCreateRoom} action="">
+            <input
+              type="text"
+              placeholder="Room name"
+              onChange={(event) => setNewRoom(event.target.value)}
+              value={newRoom}
+            />
             <Button type="submit">Create room </Button>
           </CreateRoomForm>
           <p>
