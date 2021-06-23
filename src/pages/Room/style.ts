@@ -82,7 +82,7 @@ export const FormFooter = styled.div`
 
   margin-top: 16px;
 
-  span {
+  > span {
     font-size: 14px;
     font-weight: 500;
     
@@ -102,5 +102,26 @@ export const FormFooter = styled.div`
 
       cursor: pointer;
     }
+  }
+`;
+
+export const UserInfo = styled.div`
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%
+  }
+
+  span {
+    margin-left: 8px;
+
+    color: ${({ theme }) => theme.colors.text};
+
+    font-weight: 500;
+    font-size: 14px;
   }
 `;

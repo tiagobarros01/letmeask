@@ -14,6 +14,7 @@ import {
   TitleContainer,
   QuestionsForm,
   FormFooter,
+  UserInfo,
 } from './style';
 
 interface RoomParams {
@@ -73,13 +74,23 @@ export default function Room(): JSX.Element {
           />
 
           <FormFooter>
-            <span>
-              To send a question,
-              {' '}
-              <button type="button">login</button>
-              .
-            </span>
-            <Button type="submit" disabled={!user}>Send question</Button>
+            {user ? (
+              <UserInfo>
+                <img src={user.avatar} alt={user.name} />
+                <span>{user.name}</span>
+              </UserInfo>
+            ) : (
+              <span>
+                To send a question,
+                {' '}
+                <button type="button">login</button>
+                .
+              </span>
+            )}
+
+            <Button type="submit" disabled={!user}>
+              Send question
+            </Button>
           </FormFooter>
         </QuestionsForm>
       </Main>
