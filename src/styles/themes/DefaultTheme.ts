@@ -4,6 +4,7 @@ export default {
   colors: {
     background: '#f8f8f8',
     scndBackground: '#835afd',
+    thirdBackground: '#fefefe',
 
     title: '#fff',
     text: '#29292e',
