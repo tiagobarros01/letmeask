@@ -6,7 +6,7 @@ import { AuthContextData } from '../@types/AuthContextData';
 import { User } from '../@types/User';
 import { firebase, auth } from '../services/firebase';
 
-interface Props {
+type Props = {
   children: React.ReactNode;
 }
 

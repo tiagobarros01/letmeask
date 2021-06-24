@@ -3,7 +3,7 @@ import React from 'react';
 import copyImg from '../../assets/images/copy.svg';
 import { ButtonComponent } from './style';
 
-interface Props {
+type Props = {
   code: string;
 }
 

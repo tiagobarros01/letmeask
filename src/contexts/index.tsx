@@ -2,7 +2,7 @@ import React from 'react';
 
 import { AuthContextProvider } from './AuthContext';
 
-interface Props {
+type Props = {
   children: React.ReactNode;
 }
 

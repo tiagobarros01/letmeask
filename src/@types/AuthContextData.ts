@@ -1,6 +1,6 @@
 import { User } from './User';
 
-export interface AuthContextData {
+export type AuthContextData = {
   user: User | undefined;
   signInWithGoogle: () => Promise<void>;
 }
