@@ -1,5 +1,4 @@
-/* eslint-disable no-useless-return */
-import React, { FormEvent, useEffect, useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import LogoImg from '../../assets/images/logo.svg';
@@ -7,6 +6,7 @@ import { Button } from '../../components/Button';
 import { Question } from '../../components/Question';
 import { RoomCode } from '../../components/RoomCode';
 import { useAuth } from '../../hooks/useAuth';
+import { useRoom } from '../../hooks/useRoom';
 import { database } from '../../services/firebase';
 import {
   Wrapper,
@@ -23,53 +23,12 @@ type RoomParams = {
   id: string;
 }
 
-type Question = {
-  id: string;
-  author: {
-    name: string;
-    avatar: string;
-  }
-  content: string;
-  isHighlighted: boolean;
-  isAnswered: boolean;
-}
-
-type FirebaseQuestions = Record<string, {
-  author: {
-    name: string;
-    avatar: string;
-  }
-  content: string;
-  isHighlighted: boolean;
-  isAnswered: boolean;
-}>;
-
 export default function Room(): JSX.Element {
   const { user } = useAuth();
   const { id: roomId } = useParams<RoomParams>();
   const [newQuestion, setNewQuestion] = useState<string>('');
-  const [questions, setQuestions] = useState<Question[]>([]);
-  const [title, setTitle] = useState<string>('');
 
-  useEffect(() => {
-    const roomRef = database.ref(`rooms/${roomId}`);
-
-    roomRef.once('value', (room) => {
-      const databaseRoom = room.val();
-      const firebaseQuestions: FirebaseQuestions = databaseRoom.questions ?? {};
-
-      const parsedQuestions = Object.entries(firebaseQuestions).map(([key, value]) => ({
-        id: key,
-        content: value.content,
-        author: value.author,
-        isHighlighted: value.isHighlighted,
-        isAnswered: value.isAnswered,
-      }));
-
-      setTitle(databaseRoom.title);
-      setQuestions(parsedQuestions);
-    });
-  }, [roomId]);
+  const { questions, title } = useRoom(roomId);
 
   async function handleSendQuestion(event: FormEvent) {
     event.preventDefault();

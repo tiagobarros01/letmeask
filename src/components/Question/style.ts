@@ -9,7 +9,7 @@ export const Container = styled.div`
 
   padding: 24px;
 
-  & + .question{
+  + .question{
     margin-top: 8px;
   };
 
