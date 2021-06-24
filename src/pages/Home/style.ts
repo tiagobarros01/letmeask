@@ -16,22 +16,22 @@ export const Container = styled.aside`
   flex-direction: column;
   justify-content: center;
 
-  padding: 120px 80px;
+  padding: 7.5rem 5rem;
 
   img {
-    max-width: 320px;
+    max-width: 20rem;
   }
 
   strong {
-    font: 700 36px 'Poppins', sans-serif;
-    line-height: 42px;
-    margin-top: 16px;
+    font: 700 2.25rem 'Poppins', sans-serif;
+    line-height: 2.625rem;
+    margin-top: 1rem;
   }
 
   p {
-    font-size: 24px;
-    line-height: 32px;
-    margin-top: 16px;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-top: 1rem;
 
     color: ${({ theme }) => theme.colors.background};
   }
@@ -40,7 +40,7 @@ export const Container = styled.aside`
 export const Main = styled.main`
   flex: 8;
 
-  padding: 0 32px;
+  padding: 0 2rem;
 
   display: flex;
   align-items: center;
@@ -53,7 +53,7 @@ export const MainContent = styled.div`
   align-items: stretch;
 
   width: 100%;
-  max-width: 320px;
+  max-width: 20rem;
 
   text-align: center;
 
@@ -63,10 +63,10 @@ export const MainContent = styled.div`
 `;
 
 export const GoggleBtn = styled.button`
-  height: 50px;
+  height: 3.125rem;
 
-  margin-top: 64px;
-  border-radius: 8px;
+  margin-top: 4rem;
+  border-radius: 0.5rem;
 
   font-weight: 500;
 
@@ -87,14 +87,14 @@ export const GoggleBtn = styled.button`
   }
 
   img {
-    margin-right: 8px;
+    margin-right: 0.5rem;
   }
 `;
 
 export const Divider = styled.div`
-  font-size: 14px;
+  font-size: 0.875rem;
 
-  margin: 32px 0;
+  margin: 2rem 0;
 
   display: flex;
   align-items: center;
@@ -110,7 +110,7 @@ export const Divider = styled.div`
 
     background: ${({ theme }) => theme.colors.border};
 
-    margin-right: 16px;
+    margin-right: 1rem;
   }
 
   ::after {
@@ -122,24 +122,24 @@ export const Divider = styled.div`
 
     background: ${({ theme }) => theme.colors.border};
 
-    margin-left: 16px;
+    margin-left: 1rem;
   }
 `;
 
 export const RoomForm = styled.form`
   input {
-    height: 50px;
+    height: 3.125rem;
 
-    border-radius: 8px;
+    border-radius: 0.5rem;
     border: 1px solid ${({ theme }) => theme.colors.border};
 
-    padding: 0 16px;
+    padding: 0 1rem;
 
     background: ${({ theme }) => theme.colors.title};
   }
 
   button {
-    margin-top: 16px;
+    margin-top: 1rem;
   }
 
   button,

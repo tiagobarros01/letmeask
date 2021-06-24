@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   header {
-    padding: 24px;
+    padding: 1.5rem;
     border-bottom: 1px solid ${({ theme }) => theme.colors.background};
   }
 `;
 
 export const Content = styled.div`
-  max-width: 1120px;
+  max-width: 70rem;
 
   margin: 0 auto;
 
@@ -16,43 +16,43 @@ export const Content = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  > img {
-    max-height: 45px;
+  > svg {
+    max-height: 2.8rem;
   }
 `;
 
 export const Main = styled.main`
-  max-width: 800px;
+  max-width: 50rem;
 
   margin: 0 auto;
 `;
 
 export const TitleContainer = styled.div`
-  margin: 32px 0 24px;
+  margin: 2rem 0 1.5rem;
 
   display: flex;
   align-items: center;
 
   h1 {
     font-family: 'Poppins', sans-serif;
-    font-size: 24px;
+    font-size: 1.5rem;
 
     color: ${({ theme }) => theme.colors.text};
   }
 
   span {
-    margin-left: 16px;
+    margin-left: 1rem;
 
     background: ${({ theme }) => theme.colors.link};
 
-    border-radius: 9999px;
+    border-radius: 624rem;
 
-    padding: 8px 16px;
+    padding: .5rem 1rem;
 
     color: ${({ theme }) => theme.colors.title};
 
     font-weight: 800;
-    font-size: 14px;
+    font-size: .875rem;
   }
 `;
 
@@ -62,16 +62,16 @@ export const QuestionsForm = styled.form`
 
     border: 0;
 
-    padding: 16px;
+    padding: 1rem;
 
-    border-radius: 8px;
+    border-radius: .5rem;
 
     background: ${({ theme }) => theme.colors.thirdBackground};
 
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 
     resize: vertical;
-    min-height: 130px;
+    min-height: 8.125rem;
   }
 `;
 
@@ -80,10 +80,10 @@ export const FormFooter = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  margin-top: 16px;
+  margin-top: 1rem;
 
   > span {
-    font-size: 14px;
+    font-size: .875rem;
     font-weight: 500;
     
     color: ${({ theme }) => theme.colors.details};
@@ -97,7 +97,7 @@ export const FormFooter = styled.div`
 
       text-decoration: underline;
 
-      font-size: 14px;
+      font-size: .875rem;
       font-weight: 500;
 
       cursor: pointer;
@@ -110,24 +110,24 @@ export const UserInfo = styled.div`
   align-items: center;
 
   img {
-    width: 32px;
-    height: 32px;
+    width: 2rem;
+    height: 2rem;
 
     border-radius: 50%
   }
 
   span {
-    margin-left: 8px;
+    margin-left: .5rem;
 
     color: ${({ theme }) => theme.colors.text};
 
     font-weight: 500;
-    font-size: 14px;
+    font-size: .875rem;
   }
 `;
 
 export const List = styled.div`
-  margin-top: 32px;
+  margin-top: 2rem;
 `;
 
 export const LikeButton = styled.button<{ liked: boolean }>`
@@ -140,7 +140,7 @@ export const LikeButton = styled.button<{ liked: boolean }>`
   display: flex;
   align-items: flex-end;
 
-  gap: 8px;
+  gap: .5rem;
 
   color: ${({ liked, theme }) => (liked ? theme.colors.liked : theme.colors.details)};
 
