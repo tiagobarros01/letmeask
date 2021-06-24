@@ -129,3 +129,28 @@ export const UserInfo = styled.div`
 export const List = styled.div`
   margin-top: 32px;
 `;
+
+export const LikeButton = styled.button<{ liked: boolean }>`
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: flex-end;
+
+  gap: 8px;
+
+  color: ${({ liked, theme }) => (liked ? theme.colors.liked : theme.colors.details)};
+
+  transition: filter 200ms;
+
+  svg path {
+    stroke: ${({ liked, theme }) => (liked ? theme.colors.liked : theme.colors.details)}
+  }
+
+  :hover {
+    filter: brightness(0.7);
+  }
+`;
