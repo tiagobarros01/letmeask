@@ -16,6 +16,11 @@ export const Container = styled.div`
   p {
     color: ${({ theme }) => theme.colors.text};
   }
+
+  button {
+    border: 0;
+    background: transparent
+  }
 `;
 
 export const Footer = styled.footer`
