@@ -7,7 +7,7 @@ export const ButtonComponent = styled.button<{ isOutlined: boolean }>`
 
   font-weight: 500;
 
-  background: ${({ isOutlined, theme }) => (isOutlined ? theme.colors.title : theme.colors.scndBackground)};
+  background: ${({ isOutlined, theme }) => (isOutlined ? theme.colors.thirdBackground : theme.colors.scndBackground)};
   color: ${({ isOutlined, theme }) => (isOutlined ? theme.colors.scndBackground : theme.colors.title)};
 
   padding: 0 32px;

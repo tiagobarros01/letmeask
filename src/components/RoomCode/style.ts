@@ -7,7 +7,7 @@ export const ButtonComponent = styled.button`
 
   overflow: hidden;
 
-  background: ${({ theme }) => theme.colors.title};
+  background: ${({ theme }) => theme.colors.thirdBackground};
 
   border: 1px solid ${({ theme }) => theme.colors.scndBackground};
 
@@ -36,6 +36,8 @@ export const ButtonComponent = styled.button`
     padding: 0 16px 0 12px;
     
     width: 250px;
+    
+    color: ${({ theme }) => theme.colors.text};
 
     font-size: 14px;
     font-weight: 500;

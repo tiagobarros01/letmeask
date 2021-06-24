@@ -5,13 +5,13 @@ export const Container = styled.div`
 
   border-radius: 8px;
 
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 
   padding: 24px;
 
-  + .question{
+  + .question {
     margin-top: 8px;
-  };
+  }
 
   p {
     color: ${({ theme }) => theme.colors.text};
@@ -19,7 +19,15 @@ export const Container = styled.div`
 
   button {
     border: 0;
-    background: transparent
+    background: transparent;
+
+
+    :hover {
+      svg path {
+        transition: all 200ms;
+        stroke: ${({ theme }) => theme.colors.redGoogle};
+      }
+    }
   }
 `;
 
@@ -39,7 +47,7 @@ export const UserInfo = styled.div`
     width: 32px;
     height: 32px;
 
-    border-radius: 50%
+    border-radius: 50%;
   }
 
   span {
@@ -48,5 +56,5 @@ export const UserInfo = styled.div`
     color: ${({ theme }) => theme.colors.details};
 
     font-size: 14px;
-  }  
+  }
 `;
