@@ -1,5 +1,5 @@
 export default {
-  title: 'defaultTheme',
+  title: 'Light',
 
   colors: {
     background: '#f8f8f8',

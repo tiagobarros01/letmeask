@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { AuthContextProvider } from './AuthContext';
+import { ThemeContextProvider } from './ThemeContext';
 
 type Props = {
   children: React.ReactNode;
@@ -8,8 +9,10 @@ type Props = {
 
 export default function ContextProvider({ children }: Props): JSX.Element {
   return (
-    <AuthContextProvider>
-      {children}
-    </AuthContextProvider>
+    <ThemeContextProvider>
+      <AuthContextProvider>
+        {children}
+      </AuthContextProvider>
+    </ThemeContextProvider>
   );
 }
