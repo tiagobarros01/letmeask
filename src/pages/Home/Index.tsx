@@ -1,5 +1,4 @@
 /* eslint-disable no-alert */
-/* eslint-disable no-useless-return */
 import React, { FormEvent, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
@@ -8,7 +7,6 @@ import illustrationImg from '../../assets/images/illustration.svg';
 import { Button } from '../../components/Button';
 import { LogoSvg } from '../../components/LogoSvg';
 import { useAuth } from '../../hooks/useAuth';
-import { useTheme } from '../../hooks/useTheme';
 import { database } from '../../services/firebase';
 import {
   Wrapper,
@@ -23,8 +21,6 @@ import {
 function Home(): JSX.Element {
   const history = useHistory();
   const { signInWithGoogle, user } = useAuth();
-  const { theme } = useTheme();
-
   const [roomCode, setRoomCode] = useState<string>('');
 
   async function handleCreateRoom() {

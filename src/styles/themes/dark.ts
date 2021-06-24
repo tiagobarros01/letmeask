@@ -6,7 +6,7 @@ export default {
     scndBackground: '#835afd',
     thirdBackground: '#333',
 
-    title: '#000',
+    title: '#fff',
     text: '#d1d1e6',
     details: '#737380',
 

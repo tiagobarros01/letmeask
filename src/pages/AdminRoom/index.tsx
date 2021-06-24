@@ -3,8 +3,8 @@ import React from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 
 import DeleteImg from '../../assets/images/delete.svg';
-import LogoImg from '../../assets/images/logo.svg';
 import { Button } from '../../components/Button';
+import { LogoSvg } from '../../components/LogoSvg';
 import { Question } from '../../components/Question';
 import { RoomCode } from '../../components/RoomCode';
 // import { useAuth } from '../../hooks/useAuth';
@@ -49,7 +49,7 @@ export default function AdminRoom(): JSX.Element {
     <Wrapper>
       <header>
         <Content>
-          <img src={LogoImg} alt="Letmeask" />
+          <LogoSvg />
           <ButtonsContent>
             <RoomCode code={roomId} />
             <Button isOutlined onClick={handleEndRoom}>Close room</Button>

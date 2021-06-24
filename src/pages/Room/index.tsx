@@ -1,8 +1,8 @@
 import React, { FormEvent, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import LogoImg from '../../assets/images/logo.svg';
 import { Button } from '../../components/Button';
+import { LogoSvg } from '../../components/LogoSvg';
 import { Question } from '../../components/Question';
 import { RoomCode } from '../../components/RoomCode';
 import { useAuth } from '../../hooks/useAuth';
@@ -71,7 +71,7 @@ export default function Room(): JSX.Element {
     <Wrapper>
       <header>
         <Content>
-          <img src={LogoImg} alt="Letmeask" />
+          <LogoSvg />
           <RoomCode code={roomId} />
         </Content>
       </header>

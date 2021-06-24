@@ -1,10 +1,9 @@
-/* eslint-disable no-useless-return */
 import React, { FormEvent, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
 import illustrationImg from '../../assets/images/illustration.svg';
-import logoImg from '../../assets/images/logo.svg';
-import { Button } from '../../components/Button/index';
+import { Button } from '../../components/Button';
+import { LogoSvg } from '../../components/LogoSvg';
 import { useAuth } from '../../hooks/useAuth';
 import { database } from '../../services/firebase';
 import {
@@ -46,7 +45,7 @@ function NewRoom(): JSX.Element {
       </Container>
       <Main>
         <MainContent>
-          <img src={logoImg} alt="Letmeask" />
+          <LogoSvg />
           <h2>Create a new room</h2>
           <CreateRoomForm onSubmit={handleCreateRoom} action="">
             <input
