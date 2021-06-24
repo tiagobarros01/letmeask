@@ -12,7 +12,7 @@ type Props = {
 
 export function Question({ content, author }: Props): JSX.Element {
   return (
-    <Container>
+    <Container className="question">
       <p>{content}</p>
       <Footer>
         <UserInfo>

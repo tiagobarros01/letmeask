@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 
 import LogoImg from '../../assets/images/logo.svg';
 import { Button } from '../../components/Button';
+import { Question } from '../../components/Question';
 import { RoomCode } from '../../components/RoomCode';
 import { useAuth } from '../../hooks/useAuth';
 import { database } from '../../services/firebase';
@@ -15,6 +16,7 @@ import {
   QuestionsForm,
   FormFooter,
   UserInfo,
+  List,
 } from './style';
 
 type RoomParams = {
@@ -146,9 +148,15 @@ export default function Room(): JSX.Element {
             </Button>
           </FormFooter>
         </QuestionsForm>
-        {questions.map((item) => (
-          <span>{item.content}</span>
-        ))}
+        <List>
+          {questions.map((question) => (
+            <Question
+              content={question.content}
+              author={question.author}
+              key={question.id}
+            />
+          ))}
+        </List>
       </Main>
     </Wrapper>
   );

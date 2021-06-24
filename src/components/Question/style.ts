@@ -9,9 +9,8 @@ export const Container = styled.div`
 
   padding: 24px;
 
-  & + Container {
-    background: red;
-    /* margin-top: 8px; */
+  & + .question{
+    margin-top: 8px;
   };
 
   p {
@@ -21,7 +20,7 @@ export const Container = styled.div`
 
 export const Footer = styled.footer`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
   margin-top: 24px;
