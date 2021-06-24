@@ -12,6 +12,8 @@ declare module 'styled-components' {
       text: string;
       details: string;
 
+      liked: string;
+
       link: string;
       border: string;
 

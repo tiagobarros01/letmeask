@@ -10,6 +10,8 @@ export default {
     text: '#29292e',
     details: '#737380',
 
+    liked: '#935afd',
+
     link: '#e559f9',
     border: '#a8a8b3',
 
