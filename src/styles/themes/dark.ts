@@ -1,5 +1,5 @@
 export default {
-  title: 'Dark',
+  title: 'dark',
 
   colors: {
     background: '#222',
@@ -7,7 +7,7 @@ export default {
     thirdBackground: '#333',
 
     title: '#000',
-    text: '#29292e',
+    text: '#d1d1e6',
     details: '#737380',
 
     liked: '#935afd',

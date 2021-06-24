@@ -5,9 +5,10 @@ import { useHistory } from 'react-router-dom';
 
 import GoogleIconImage from '../../assets/images/google-icon.svg';
 import illustrationImg from '../../assets/images/illustration.svg';
-import logoImg from '../../assets/images/logo.svg';
-import { Button } from '../../components/Button/index';
+import { Button } from '../../components/Button';
+import { LogoSvg } from '../../components/LogoSvg';
 import { useAuth } from '../../hooks/useAuth';
+import { useTheme } from '../../hooks/useTheme';
 import { database } from '../../services/firebase';
 import {
   Wrapper,
@@ -22,6 +23,7 @@ import {
 function Home(): JSX.Element {
   const history = useHistory();
   const { signInWithGoogle, user } = useAuth();
+  const { theme } = useTheme();
 
   const [roomCode, setRoomCode] = useState<string>('');
 
@@ -66,7 +68,7 @@ function Home(): JSX.Element {
       </Container>
       <Main>
         <MainContent>
-          <img src={logoImg} alt="Letmeask" />
+          <LogoSvg />
           <GoggleBtn onClick={handleCreateRoom} type="button">
             <img src={GoogleIconImage} alt="Google logo" />
             Create your room with Google
