@@ -1,6 +1,6 @@
 /* eslint-disable no-alert */
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 
 import DeleteImg from '../../assets/images/delete.svg';
 import LogoImg from '../../assets/images/logo.svg';
@@ -26,6 +26,7 @@ type RoomParams = {
 
 export default function AdminRoom(): JSX.Element {
   // const { user } = useAuth();
+  const history = useHistory();
   const { id: roomId } = useParams<RoomParams>();
 
   const { questions, title } = useRoom(roomId);
@@ -36,6 +37,14 @@ export default function AdminRoom(): JSX.Element {
     }
   }
 
+  async function handleEndRoom() {
+    await database.ref(`rooms/${roomId}`).update({
+      endedAt: new Date(),
+    });
+
+    history.push('/');
+  }
+
   return (
     <Wrapper>
       <header>
@@ -43,7 +52,7 @@ export default function AdminRoom(): JSX.Element {
           <img src={LogoImg} alt="Letmeask" />
           <ButtonsContent>
             <RoomCode code={roomId} />
-            <Button isOutlined>Close room</Button>
+            <Button isOutlined onClick={handleEndRoom}>Close room</Button>
           </ButtonsContent>
         </Content>
       </header>
