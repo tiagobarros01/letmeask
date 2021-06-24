@@ -3,16 +3,12 @@ import React, {
 } from 'react';
 import { DefaultTheme, ThemeProvider } from 'styled-components';
 
+import { ThemeContextData } from '../@types/ThemeContextData';
 import dark from '../styles/themes/dark';
 import light from '../styles/themes/light';
 
 type Props = {
   children: React.ReactNode;
-}
-
-type ThemeContextData = {
-  theme: DefaultTheme
-  toggleTheme: () => void;
 }
 
 const ThemeContext = createContext<ThemeContextData>({
