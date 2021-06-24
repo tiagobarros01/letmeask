@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
-export const ButtonComponent = styled.button`
+export const ButtonComponent = styled.button<{ isOutlined: boolean }>`
   height: 50px;
 
   border-radius: 8px;
 
   font-weight: 500;
 
-  background: ${({ theme }) => theme.colors.scndBackground};
-  color: ${({ theme }) => theme.colors.title};
+  background: ${({ isOutlined, theme }) => (isOutlined ? theme.colors.title : theme.colors.scndBackground)};
+  color: ${({ isOutlined, theme }) => (isOutlined ? theme.colors.scndBackground : theme.colors.title)};
 
   padding: 0 32px;
 
@@ -17,7 +17,9 @@ export const ButtonComponent = styled.button`
   align-items: center;
 
   cursor: pointer;
-  border: 0;
+  border: 1px
+          ${({ isOutlined }) => (isOutlined ? 'solid' : 'solid')};
+          ${({ isOutlined, theme }) => (isOutlined ? theme.colors.scndBackground : theme.colors.scndBackground)};
 
   transition: filter 200ms;
 

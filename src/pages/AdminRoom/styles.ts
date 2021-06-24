@@ -21,6 +21,18 @@ export const Content = styled.div`
   }
 `;
 
+export const ButtonsContent = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 16px;
+
+  button {
+    height: 40px;
+  }
+`;
+
 export const Main = styled.main`
   max-width: 800px;
 
@@ -72,57 +84,6 @@ export const QuestionsForm = styled.form`
 
     resize: vertical;
     min-height: 130px;
-  }
-`;
-
-export const FormFooter = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  margin-top: 16px;
-
-  > span {
-    font-size: 14px;
-    font-weight: 500;
-    
-    color: ${({ theme }) => theme.colors.details};
-
-    button {
-      background: transparent;
-
-      border: 0;
-
-      color: ${({ theme }) => theme.colors.scndBackground};
-
-      text-decoration: underline;
-
-      font-size: 14px;
-      font-weight: 500;
-
-      cursor: pointer;
-    }
-  }
-`;
-
-export const UserInfo = styled.div`
-  display: flex;
-  align-items: center;
-
-  img {
-    width: 32px;
-    height: 32px;
-
-    border-radius: 50%
-  }
-
-  span {
-    margin-left: 8px;
-
-    color: ${({ theme }) => theme.colors.text};
-
-    font-weight: 500;
-    font-size: 14px;
   }
 `;
 

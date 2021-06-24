@@ -11,11 +11,10 @@ import { database } from '../../services/firebase';
 import {
   Wrapper,
   Content,
+  ButtonsContent,
   Main,
   TitleContainer,
   QuestionsForm,
-  FormFooter,
-  UserInfo,
   List,
 } from './styles';
 
@@ -61,7 +60,10 @@ export default function AdminRoom(): JSX.Element {
       <header>
         <Content>
           <img src={LogoImg} alt="Letmeask" />
-          <RoomCode code={roomId} />
+          <ButtonsContent>
+            <RoomCode code={roomId} />
+            <Button isOutlined>Close room</Button>
+          </ButtonsContent>
         </Content>
       </header>
       <Main>
@@ -86,26 +88,6 @@ export default function AdminRoom(): JSX.Element {
             onChange={(event) => setNewQuestion(event.target.value)}
             value={newQuestion}
           />
-
-          <FormFooter>
-            {user ? (
-              <UserInfo>
-                <img src={user.avatar} alt={user.name} />
-                <span>{user.name}</span>
-              </UserInfo>
-            ) : (
-              <span>
-                To send a question,
-                {' '}
-                <button type="button">login</button>
-                .
-              </span>
-            )}
-
-            <Button type="submit" disabled={!user}>
-              Send question
-            </Button>
-          </FormFooter>
         </QuestionsForm>
         <List>
           {questions.map((question) => (
