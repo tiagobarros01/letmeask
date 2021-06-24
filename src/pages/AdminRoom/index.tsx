@@ -17,13 +17,13 @@ import {
   FormFooter,
   UserInfo,
   List,
-} from './style';
+} from './styles';
 
 type RoomParams = {
   id: string;
 };
 
-export default function Room(): JSX.Element {
+export default function AdminRoom(): JSX.Element {
   const { user } = useAuth();
   const { id: roomId } = useParams<RoomParams>();
   const [newQuestion, setNewQuestion] = useState<string>('');
