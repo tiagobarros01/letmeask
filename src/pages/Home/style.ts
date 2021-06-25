@@ -3,7 +3,15 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: flex;
   align-items: stretch;
+  width: 100vw;
   height: 100vh;
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+
+    flex: 5;
+  }
+
 `;
 
 export const Container = styled.aside`
@@ -26,6 +34,7 @@ export const Container = styled.aside`
     font: 700 2.25rem 'Poppins', sans-serif;
     line-height: 2.625rem;
     margin-top: 1rem;
+
   }
 
   p {
@@ -34,6 +43,20 @@ export const Container = styled.aside`
     margin-top: 1rem;
 
     color: ${({ theme }) => theme.colors.text};
+  }
+
+  @media (max-width: 576px) {
+    max-height: 40rem;
+
+    flex: 5;
+
+    align-items: center;
+
+    padding: 3rem;
+
+    img {
+      max-width: 15rem;
+    }
   }
 `;
 
@@ -45,6 +68,12 @@ export const Main = styled.main`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 576px) {
+    flex: 11;
+
+    padding: 2rem 2rem;
+  }
 `;
 
 export const MainContent = styled.div`
@@ -88,7 +117,23 @@ export const GoggleBtn = styled.button`
 
   img {
     margin-right: 0.5rem;
+
+    @media (max-width: 576px) {
+      margin: 0rem;
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+
   }
+
+  @media (max-width: 576px) {
+    font-size: 1.15rem;
+
+    justify-content: space-evenly;
+
+    margin-top: 4rem;
+  }
+
 `;
 
 export const Divider = styled.div`

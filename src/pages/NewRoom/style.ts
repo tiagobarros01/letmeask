@@ -4,6 +4,13 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: stretch;
   height: 100vh;
+
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+
+    flex: 5;
+  }
 `;
 
 export const Container = styled.aside`
@@ -35,6 +42,20 @@ export const Container = styled.aside`
 
     color: ${({ theme }) => theme.colors.text};
   }
+
+  @media (max-width: 576px) {
+    max-height: 40rem;
+
+    flex: 5;
+
+    align-items: center;
+
+    padding: 3rem;
+
+    img {
+      max-width: 15rem;
+    }
+  }
 `;
 
 export const Main = styled.main`
@@ -45,6 +66,12 @@ export const Main = styled.main`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 576px) {
+    flex: 11;
+
+    padding: 2rem 2rem;
+  }
 `;
 
 export const MainContent = styled.div`

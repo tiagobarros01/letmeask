@@ -15,12 +15,6 @@ const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.colors.text};
   }
 
-  h1, h2, h3, p {
-  }
-
-  body, button {
-  }
-
   body, input, textarea, button {
     font: 400 16px 'Roboto', sans-serif;
   }
