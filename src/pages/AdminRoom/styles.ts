@@ -61,32 +61,37 @@ export const TitleContainer = styled.div`
 
     padding: 0.5rem 1rem;
 
-    color: ${({ theme }) => theme.colors.title};
+    color: ${({ theme }) => theme.colors.white};
 
     font-weight: 800;
     font-size: 0.875rem;
   }
 `;
 
-export const QuestionsForm = styled.form`
-  textarea {
-    width: 100%;
+export const List = styled.div`
+  margin-top: 2rem;
+`;
 
-    border: 0;
-
-    padding: 1rem;
-
-    border-radius: 0.5rem;
-
-    background: ${({ theme }) => theme.colors.thirdBackground};
-
-    box-shadow: 0 2px 0.75rem rgba(0, 0, 0, 0.04);
-
-    resize: vertical;
-    min-height: 8.125rem;
+export const CheckButton = styled.button`
+  :hover {
+    svg path, circle {
+      stroke: ${({ theme }) => theme.colors.scndBackground};
+    }
   }
 `;
 
-export const List = styled.div`
-  margin-top: 2rem;
+export const HighlightButton = styled.button`
+  :hover {
+    svg path {
+      stroke: ${({ theme }) => theme.colors.scndBackground};
+    }
+  }
+`;
+
+export const RemoveButton = styled.button`
+  :hover {
+    svg path {
+      stroke: ${({ theme }) => theme.colors.redGoogle};
+    }
+  }
 `;

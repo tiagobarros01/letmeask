@@ -10,7 +10,7 @@ export const Container = styled.aside`
   flex: 7;
 
   background: ${({ theme }) => theme.colors.scndBackground};
-  color: ${({ theme }) => theme.colors.title};
+  color: ${({ theme }) => theme.colors.white};
 
   display: flex;
   flex-direction: column;
@@ -33,7 +33,7 @@ export const Container = styled.aside`
     line-height: 2rem;
     margin-top: 1rem;
 
-    color: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.text};
   }
 `;
 
@@ -65,6 +65,8 @@ export const MainContent = styled.div`
     font-size: 1.5rem;
     margin: 4rem 0 1.5rem;
 
+    color: ${({ theme }) => theme.colors.title};
+
     font-family: 'Poppins', sans-serif;
   }
 
@@ -86,11 +88,16 @@ export const CreateRoomForm = styled.form`
     height: 3.125rem;
 
     border-radius: 0.5rem;
-    border: 1px solid ${({ theme }) => theme.colors.border};
-
+    border: ${({ theme }) => (theme.title === 'light' ? 1 : 0)}px solid
+      ${({ theme }) => theme.colors.border};
+      
     padding: 0 1rem;
 
-    background: ${({ theme }) => theme.colors.title};
+    background: ${({ theme }) => theme.colors.thirdBackground};
+
+    ::placeholder {
+      color: ${({ theme }) => theme.colors.placeholder};
+    }
   }
 
   button {

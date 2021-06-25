@@ -11,7 +11,7 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
 export function Button({ isOutlined = false, ...rest }: Props): JSX.Element {
   return (
     <ButtonComponent
-      isOutlined
+      isOutlined={isOutlined}
       {...rest}
     />
   );

@@ -4,13 +4,18 @@ export default {
   colors: {
     background: '#f8f8f8',
     scndBackground: '#835afd',
-    thirdBackground: '#fefefe',
+    thirdBackground: '#ebebeb',
 
     highlight: '#F4F0FF',
     answered: '#DBDCDD',
 
-    title: '#fff',
-    text: '#29292e',
+    white: '#fff',
+    black: '#000',
+
+    placeholder: '#a3a3a3',
+
+    title: '#29292E',
+    text: '#ccccdb',
     details: '#737380',
 
     liked: '#935afd',

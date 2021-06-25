@@ -4,8 +4,8 @@ import styled from 'styled-components';
 export const Container = styled.div`
   position: fixed;
 
-  bottom: 1rem;
-  right: 1rem;
+  bottom: 1.5rem;
+  right: 1.5rem;
 
   z-index: 10;
 
@@ -15,8 +15,8 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  background: ${({ theme }) => theme.colors.answered};
+  
+  background: ${({ theme }) => theme.colors.thirdBackground};
 
   border-radius: 50%;
 
@@ -26,9 +26,11 @@ export const Container = styled.div`
 export const Light = styled(FiMoon)`
   font-size: 1.8rem;
 
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.title};
 `;
 
 export const Dark = styled(FiSun)`
   font-size: 1.8rem;
+
+  color: ${({ theme }) => theme.colors.title};
 `;

@@ -2,14 +2,19 @@ export default {
   title: 'dark',
 
   colors: {
-    background: '#222',
+    background: '#121214',
     scndBackground: '#835afd',
-    thirdBackground: '#333',
+    thirdBackground: '#202024',
 
-    highlight: '#212121',
-    answered: '#111',
+    highlight: '#1c1a1a',
+    answered: '#151517',
 
-    title: '#fff',
+    white: '#fff',
+    black: '#000',
+
+    placeholder: '#babacc',
+
+    title: '#f7f7f7',
     text: '#d1d1e6',
     details: '#737380',
 

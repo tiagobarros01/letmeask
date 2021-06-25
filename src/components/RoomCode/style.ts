@@ -35,9 +35,9 @@ export const ButtonComponent = styled.button`
 
     padding: 0 16px 0 12px;
     
-    width: 250px;
+    width: 255px;
     
-    color: ${({ theme }) => theme.colors.text};
+    color: ${({ theme }) => theme.colors.title};
 
     font-size: 14px;
     font-weight: 500;

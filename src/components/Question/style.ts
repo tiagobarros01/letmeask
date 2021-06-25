@@ -17,20 +17,12 @@ export const Container = styled.div<{ isAnswered: boolean, isHighlighted: boolea
   }
 
   p {
-    color: ${({ theme }) => theme.colors.text};
+    color: ${({ theme }) => theme.colors.title};
   }
 
   button {
     border: 0;
     background: transparent;
-
-
-    :hover {
-      svg path {
-        transition: all 200ms;
-        stroke: ${({ theme }) => theme.colors.redGoogle};
-      }
-    }
   }
 `;
 
@@ -62,7 +54,7 @@ export const UserInfo = styled.div<{ isAnswered: boolean, isHighlighted: boolean
   span {
     margin-left: 8px;
 
-    color: ${({ isAnswered, isHighlighted, theme }) => (isHighlighted === true && !isAnswered ? theme.colors.text : theme.colors.details)};
+    color: ${({ theme }) => theme.colors.details};
 
     font-size: 14px;
   }

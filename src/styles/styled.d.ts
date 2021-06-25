@@ -11,6 +11,11 @@ declare module 'styled-components' {
       highlight: string;
       answered: string;
 
+      placeholder: string,
+
+      white: string,
+      black: string,
+
       title: string;
       text: string;
       details: string;

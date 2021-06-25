@@ -37,7 +37,7 @@ export const TitleContainer = styled.div`
     font-family: 'Poppins', sans-serif;
     font-size: 1.5rem;
 
-    color: ${({ theme }) => theme.colors.text};
+    color: ${({ theme }) => theme.colors.title};
   }
 
   span {
@@ -49,7 +49,7 @@ export const TitleContainer = styled.div`
 
     padding: .5rem 1rem;
 
-    color: ${({ theme }) => theme.colors.title};
+    color: ${({ theme }) => theme.colors.white};
 
     font-weight: 800;
     font-size: .875rem;
@@ -67,6 +67,7 @@ export const QuestionsForm = styled.form`
     border-radius: .5rem;
 
     background: ${({ theme }) => theme.colors.thirdBackground};
+    color: ${({ theme }) => theme.colors.title};
 
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 
@@ -110,8 +111,8 @@ export const UserInfo = styled.div`
   align-items: center;
 
   img {
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
 
     border-radius: 50%
   }
@@ -119,10 +120,10 @@ export const UserInfo = styled.div`
   span {
     margin-left: .5rem;
 
-    color: ${({ theme }) => theme.colors.text};
+    color: ${({ theme }) => theme.colors.title};
 
     font-weight: 500;
-    font-size: .875rem;
+    font-size: 1rem;
   }
 `;
 
