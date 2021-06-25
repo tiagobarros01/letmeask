@@ -8,6 +8,9 @@ declare module 'styled-components' {
       scndBackground: string;
       thirdBackground: string,
 
+      highlight: string;
+      answered: string;
+
       title: string;
       text: string;
       details: string;
