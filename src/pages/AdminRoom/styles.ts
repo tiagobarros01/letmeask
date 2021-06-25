@@ -49,7 +49,7 @@ export const TitleContainer = styled.div`
     font-family: 'Poppins', sans-serif;
     font-size: 1.5rem;
 
-    color: ${({ theme }) => theme.colors.text};
+    color: ${({ theme }) => theme.colors.title};
   }
 
   span {

@@ -1,9 +1,10 @@
 import React, {
-  useMemo, createContext, useState, useCallback,
+  useMemo, createContext, useCallback,
 } from 'react';
 import { DefaultTheme, ThemeProvider } from 'styled-components';
 
 import { ThemeContextData } from '../@types/ThemeContextData';
+import { usePersistedState } from '../hooks/usePersistedState';
 import dark from '../styles/themes/dark';
 import light from '../styles/themes/light';
 
@@ -19,11 +20,11 @@ const ThemeContext = createContext<ThemeContextData>({
 });
 
 function ThemeContextProvider({ children }: Props): JSX.Element {
-  const [theme, setTheme] = useState<DefaultTheme>(light);
+  const [theme, setTheme] = usePersistedState<DefaultTheme>('@Letmeask:theme:', light);
 
   const toggleTheme = useCallback(() => {
     setTheme(theme.title === 'light' ? dark : light);
-  }, [theme.title]);
+  }, [theme.title, setTheme]);
 
   const memoizedValue = useMemo(() => {
     const value: ThemeContextData = {
