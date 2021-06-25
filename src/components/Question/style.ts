@@ -1,7 +1,10 @@
+/* eslint-disable no-nested-ternary */
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  background: ${({ theme }) => theme.colors.thirdBackground};
+export const Container = styled.div<{ isAnswered: boolean, isHighlighted: boolean }>`
+  background: ${({ isAnswered, isHighlighted, theme }) => (isHighlighted === true && !isAnswered ? theme.colors.highlight : isAnswered === true ? theme.colors.answered : theme.colors.thirdBackground)};
+
+  border: ${({ isAnswered, isHighlighted }) => (isHighlighted === true && !isAnswered ? 1 : 0)}px solid ${({ isHighlighted, theme }) => (isHighlighted === true ? theme.colors.scndBackground : theme.colors.thirdBackground)};
 
   border-radius: 8px;
 
@@ -37,9 +40,15 @@ export const Footer = styled.footer`
   align-items: center;
 
   margin-top: 24px;
+
+  > div {
+    display: flex;
+
+    gap: .875rem;
+  }
 `;
 
-export const UserInfo = styled.div`
+export const UserInfo = styled.div<{ isAnswered: boolean, isHighlighted: boolean }>`
   display: flex;
   align-items: center;
 
@@ -53,7 +62,7 @@ export const UserInfo = styled.div`
   span {
     margin-left: 8px;
 
-    color: ${({ theme }) => theme.colors.details};
+    color: ${({ isAnswered, isHighlighted, theme }) => (isHighlighted === true && !isAnswered ? theme.colors.text : theme.colors.details)};
 
     font-size: 14px;
   }

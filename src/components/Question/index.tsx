@@ -11,14 +11,18 @@ type Props = {
     avatar: string;
   }
   children?: React.ReactNode;
+  isAnswered?: boolean;
+  isHighlighted?: boolean;
 }
 
-export function Question({ content, author, children }: Props): JSX.Element {
+export function Question({
+  content, author, children, isAnswered = false, isHighlighted = false,
+}: Props): JSX.Element {
   return (
-    <Container className="question">
+    <Container className="question" isAnswered={isAnswered} isHighlighted={isHighlighted}>
       <p>{content}</p>
       <Footer>
-        <UserInfo>
+        <UserInfo isAnswered={isAnswered} isHighlighted={isHighlighted}>
           <img src={author.avatar} alt={author.name} />
           <span>{author.name}</span>
         </UserInfo>
