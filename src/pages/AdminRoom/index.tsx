@@ -65,7 +65,7 @@ export default function AdminRoom(): JSX.Element {
           <LogoSvg />
           <ButtonsContent>
             <RoomCode code={roomId} />
-            <Button isOutlined onClick={handleEndRoom}>Close room</Button>
+            <Button isOutlined onClick={handleEndRoom}>X</Button>
           </ButtonsContent>
         </Content>
       </header>

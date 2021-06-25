@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from 'react';
+import React, { FormEvent, useCallback, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { Button } from '../../components/Button';
@@ -57,7 +57,7 @@ export default function Room(): JSX.Element {
     setNewQuestion('');
   }
 
-  async function handleLikeQuestion(questionId: string, likeId: string | undefined) {
+  const handleLikeQuestion = useCallback(async (questionId: string, likeId: string | undefined) => {
     if (likeId) {
       await database.ref(`rooms/${roomId}/questions/${questionId}/likes/${likeId}`).remove();
     } else {
@@ -65,7 +65,7 @@ export default function Room(): JSX.Element {
         authorId: user?.id,
       });
     }
-  }
+  }, [roomId, user?.id]);
 
   return (
     <Wrapper>

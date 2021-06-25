@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const ButtonComponent = styled.button`
-  height: 40px;
+  height: 2.5rem;
   
-  border-radius: 8px;
+  border-radius: 0.5rem;
 
   overflow: hidden;
 
@@ -20,7 +20,7 @@ export const ButtonComponent = styled.button`
 
     height: 100%;
 
-    padding: 0 12px;
+    padding: 0 0.75rem;
 
     display: flex;
     justify-content: center;
@@ -33,13 +33,18 @@ export const ButtonComponent = styled.button`
 
     flex: 1;
 
-    padding: 0 16px 0 12px;
+    padding: 0 1rem 0 0.75rem;
     
-    width: 255px;
+    width: 15.938rem;
     
     color: ${({ theme }) => theme.colors.title};
 
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 500;
+
+    @media (max-width: 576px) {
+      width: 12rem;
+    }
+
   }
 `;

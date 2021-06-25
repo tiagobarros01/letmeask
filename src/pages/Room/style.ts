@@ -4,6 +4,10 @@ export const Wrapper = styled.div`
   header {
     padding: 1.5rem;
     border-bottom: 1px solid ${({ theme }) => theme.colors.background};
+
+    @media (max-width: 576px) {
+      padding: 2rem;
+    }
   }
 `;
 
@@ -25,6 +29,10 @@ export const Main = styled.main`
   max-width: 50rem;
 
   margin: 0 auto;
+
+  @media (max-width: 576px) {
+    padding: 0 2rem;
+  }
 `;
 
 export const TitleContainer = styled.div`
@@ -129,6 +137,12 @@ export const UserInfo = styled.div`
 
 export const List = styled.div`
   margin-top: 2rem;
+
+  @media (max-width: 576px) {
+    max-height: 20rem;
+
+    overflow-y: scroll;
+  }
 `;
 
 export const LikeButton = styled.button<{ liked: boolean }>`

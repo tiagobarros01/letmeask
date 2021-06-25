@@ -1,11 +1,16 @@
+/* eslint-disable react/require-default-props */
 import React from 'react';
 
 import { useTheme } from '../../hooks/useTheme';
 
-export function LogoSvg(): JSX.Element {
+type Props = {
+  width?: string
+}
+
+export function LogoSvg({ width }: Props): JSX.Element {
   const { theme } = useTheme();
   return (
-    <svg width="157" height="75" viewBox="0 0 157 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width={width} height="75" viewBox="0 0 157 75" fill="none" xmlns="http://www.w3.org/2000/svg">
       { theme.title === 'light'
         ? (
           <>
